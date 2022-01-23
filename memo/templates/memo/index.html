@@ -1,0 +1,16 @@
+{% extends "memo/base.html" %}
+
+{% block content %}
+<div class="container">
+  <h1 class="display-4">memo</h1>
+  <p class="lead">memoでタスク管理をしてみましょう。</p>
+  <hr class="my-4">
+  <p>このアプリケーションはDjangoで作られています。</p>
+
+  <!-- ここから追記 -->
+  <a class="btn btn-primary btn-lg" href="{% url 'login' %}" role="button">ログイン</a>
+  <a class="btn btn-primary btn-lg" href="{% url 'memo:signup' %}" role="button">サインアップ</a>
+  <!-- ここまで追記 -->
+
+</div>
+{% endblock %}

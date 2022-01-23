@@ -1,0 +1,17 @@
+{% extends "memo/base.html" %}
+
+{% block content %}
+
+<h1>リスト詳細</h1>
+<dl class="row">
+  <dt class="col-sm-3">タイトル</dt>
+  <dd class="col-sm-9">{{ list.title }}</dd>
+  <dt class="col-sm-3">ユーザー名</dt>
+  <dd class="col-sm-9">{{ list.user.username }}</dd>
+</dl>
+
+<!-- ここから追記 -->
+<a class="btn btn-primary" href="{% url 'memo:lists_update' list.pk  %}" role="button">編集</a>
+<!-- ここまで追記 -->
+
+{% endblock %}

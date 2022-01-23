@@ -1,0 +1,20 @@
+{% extends "memo/base.html" %}
+
+{% block content %}
+<div class="container">
+  <h1>リスト一覧</h1>
+  <a class="btn btn-primary my-3" href="{% url 'memo:lists_create' %}" role="button">作成</a> <!-- 追加 -->
+  <div class="card-columns">
+    {% for list in list_list %}
+    <a href="{% url 'memo:lists_detail' list.pk %}" class="card"> <!-- aタグに変更 -->
+      <div class="card-body">
+        <h5 class="card-title">{{ list.title }}</h5>
+        <footer>
+          <small class="text-muted">作成者: {{ list.user.username }}</small>
+        </footer>
+      </div>
+    </a> <!-- aタグに変更 -->
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
